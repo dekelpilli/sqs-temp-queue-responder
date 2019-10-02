@@ -1,0 +1,4 @@
+responder:
+  queue-prefix: __myQueueTest13__
+
+server.port: 0
