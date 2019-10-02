@@ -62,13 +62,10 @@ public class SQSRespondingService {
         String potentialNumber = message.getBody();
 
         if (potentialNumber == null || potentialNumber.equals(SERIALISED_NULL)) {
-            log.error("\n\nRECEIVED NULL OR NULL-LIKE: {}\n\n", potentialNumber);
+            log.error("\n\nRECEIVED NULL OR NULL-LIKE: {}\n\n", potentialNumber); // this never happens
         }
 
         boolean isNumber = StringUtils.isNumeric(potentialNumber);
-//        if (!isNumber) {
-//            throw new RuntimeException(potentialNumber);
-//        }
         log.info("Is {} a number? {}", potentialNumber, isNumber);
         amazonSQSResponder.sendResponseMessage(MessageContent.fromMessage(message),
                 new MessageContent(Boolean.toString(isNumber),
