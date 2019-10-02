@@ -1,4 +1,4 @@
 responder:
-  queue-prefix: __myQueueTest14__
+  queue-prefix: __myQueueTest15__
 
 server.port: 0
